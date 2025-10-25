@@ -82,6 +82,19 @@ return {
         
         -- Custom mapping for <leader>cc
         ["<Leader>cc"] = { "<cmd>ClaudeCode<cr>", desc = "Open Claude Code" },
+
+        -- Delete without copying to register
+        ["d"] = { '"_d', desc = "Delete without copying" },
+        ["D"] = { '"_D', desc = "Delete to end of line without copying" },
+        ["c"] = { '"_c', desc = "Change without copying" },
+        ["C"] = { '"_C', desc = "Change to end of line without copying" },
+        ["x"] = { '"_x', desc = "Delete character without copying" },
+      },
+      v = {
+        -- Delete without copying to register in visual mode
+        ["d"] = { '"_d', desc = "Delete without copying" },
+        ["c"] = { '"_c', desc = "Change without copying" },
+        ["x"] = { '"_x', desc = "Delete character without copying" },
       },
     },
   },
