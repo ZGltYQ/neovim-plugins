@@ -8,7 +8,7 @@ return {
     local null_ls = require("null-ls")
     local builtins = null_ls.builtins
 
-    opts.on_attach = function(client, bufnr)
+    opts.on_attach = function(_, bufnr)
       vim.keymap.set("n", "<A-e>", function()
         vim.lsp.buf.format({
           async = true,
@@ -17,6 +17,7 @@ return {
           end,
         })
       end, { buffer = bufnr, desc = "ESLint/Prettier fix" })
+      vim.keymap.set('n', 'K', vim.lsp.buf.hover, { buffer = bufnr, desc = 'LSP Hover Documentation' })
     end
 
     opts.sources = require("astrocore").list_insert_unique(opts.sources, {
